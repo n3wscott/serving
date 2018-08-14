@@ -23,7 +23,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-func validateObjectMetadata(meta metav1.Object) *apis.FieldError {
+func validateObjectMetadata(meta metav1.ObjectMeta) *apis.FieldError {
 	name := meta.GetName()
 
 	if strings.Contains(name, ".") {

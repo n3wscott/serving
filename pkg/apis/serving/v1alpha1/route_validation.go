@@ -26,7 +26,7 @@ import (
 )
 
 func (r *Route) Validate() *apis.FieldError {
-	if err := validateObjectMetadata(r.GetObjectMeta()); err != nil {
+	if err := validateObjectMetadata(r.ObjectMeta); err != nil {
 		return err.ViaField("metadata")
 	}
 	return r.Spec.Validate().ViaField("spec")
